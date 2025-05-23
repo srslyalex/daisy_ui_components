@@ -23,6 +23,7 @@ defmodule DaisyUIComponents.Badge do
   attr :class, :string, default: nil
   attr :color, :string, values: @colors
   attr :ghost, :boolean, default: false
+  attr :soft, :boolean, default: false
   attr :outline, :boolean, default: false
   attr :size, :string, values: sizes()
   attr :rest, :global
@@ -55,6 +56,7 @@ defmodule DaisyUIComponents.Badge do
       "badge",
       badge_color(assigns[:color]),
       maybe_add_class(assigns[:ghost], "badge-ghost"),
+      maybe_add_class(assigns[:soft], "badge-soft"),
       maybe_add_class(assigns[:outline], "badge-outline"),
       badge_size(assigns[:size]),
       assigns.class
